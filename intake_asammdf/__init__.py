@@ -4,6 +4,6 @@ __version__ = get_versions()['version']
 del get_versions
 
 import intake
-from .intake_sql import (SQLSource, SQLSourceAutoPartition,
+from .intake_asammdf import (SQLSource, SQLSourceAutoPartition,
                          SQLSourceManualPartition)
 from .sql_cat import SQLCatalog

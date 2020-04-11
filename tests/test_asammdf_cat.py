@@ -1,4 +1,4 @@
-from intake_sql.sql_cat import SQLCatalog
+from intake_asammdf.sql_cat import SQLCatalog
 from .utils import temp_db, df, df2
 import intake
 import os

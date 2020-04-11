@@ -1,4 +1,4 @@
-Welcome to intake_sql's documentation!
+Welcome to intake_asammdf's documentation!
 ======================================
 
 Access any SQL data service which `sqlalchemy` can talk to from Intake.

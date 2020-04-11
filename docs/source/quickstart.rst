@@ -1,7 +1,7 @@
 Quickstart
 ==========
 
-``intake-sql`` provides quick and easy access to tabular data stored in
+``intake-asammdf`` provides quick and easy access to tabular data stored in
 sql data sources.
 
 Installation
@@ -9,9 +9,9 @@ Installation
 
 To use this plugin for `intake`_, install with the following command::
 
-   conda install -c intake intake-sql
+   conda install -c intake intake-asammdf
 
-.. _intake: https://github.com/ContinuumIO/intake
+.. _intake: https://github.com/AutomotiveDevOps/intake
 
 In addition, you will also need other packages, depending on the database you wish to talk
 to. For example, if your database if Hive, you will also need to install `pyhive`.
@@ -19,7 +19,7 @@ to. For example, if your database if Hive, you will also need to install `pyhive
 The plugins
 -----------
 
-``intake-sql`` provides three data plugins to access your data, plus a catalogue plugin. These
+``intake-asammdf`` provides three data plugins to access your data, plus a catalogue plugin. These
 will be briefly described here, but see also the API documentation for specifics on parameter
 usage. All data plugins produce data-frames as output.
 

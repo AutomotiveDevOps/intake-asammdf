@@ -1,5 +1,5 @@
 import intake
-from intake_sql import (SQLSourceAutoPartition, SQLSourceManualPartition,
+from intake_asammdf import (SQLSourceAutoPartition, SQLSourceManualPartition,
                         SQLSource)
 from .utils import temp_db, df, df2
 import pandas as pd

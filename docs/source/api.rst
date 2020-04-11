@@ -2,19 +2,19 @@ API Reference
 =============
 
 .. autosummary::
-   intake_sql.SQLSource
-   intake_sql.SQLSourceAutoPartition
-   intake_sql.SQLSourceManualPartition
-   intake_sql.SQLCatalog
+   intake_asammdf.SQLSource
+   intake_asammdf.SQLSourceAutoPartition
+   intake_asammdf.SQLSourceManualPartition
+   intake_asammdf.SQLCatalog
 
-.. autoclass:: intake_sql.SQLSource
+.. autoclass:: intake_asammdf.SQLSource
    :members:
 
-.. autoclass:: intake_sql.SQLSourceAutoPartition
+.. autoclass:: intake_asammdf.SQLSourceAutoPartition
    :members:
 
-.. autoclass:: intake_sql.SQLSourceManualPartition
+.. autoclass:: intake_asammdf.SQLSourceManualPartition
    :members:
 
-.. autoclass:: intake_sql.SQLCatalog
+.. autoclass:: intake_asammdf.SQLCatalog
    :members:

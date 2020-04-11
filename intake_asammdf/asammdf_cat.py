@@ -23,7 +23,7 @@ class SQLCatalog(Catalog):
 
     def _load(self):
         import sqlalchemy
-        from intake_sql import SQLSource, SQLSourceAutoPartition
+        from intake_asammdf import SQLSource, SQLSourceAutoPartition
         engine = sqlalchemy.create_engine(self.uri)
         meta = sqlalchemy.MetaData(bind=engine)
         meta.reflect(views=self.views, schema=self.sql_kwargs.get("schema"))
