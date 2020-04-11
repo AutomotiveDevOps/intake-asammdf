@@ -11,4 +11,3 @@ To install the intake-asammdf plugin, execute the following command
 ```
 conda install -c intake intake-asammdf
 ```
-

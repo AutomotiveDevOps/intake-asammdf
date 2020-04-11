@@ -1,28 +1,33 @@
-import pandas as pd
-import numpy as np
 import os
-import pytest
 import tempfile
+
+import numpy as np
+import pandas as pd
+import pytest
 import sqlalchemy as sa
 
 
-df = pd.DataFrame({
-    'a': np.random.rand(100),
-    'b': np.random.randint(100),
-    'c': np.random.choice(['a', 'b', 'c', 'd'], size=100)
-})
-df.index.name = 'p'
-df2 = pd.DataFrame({
-    'd': np.random.rand(100),
-    'e': np.random.randint(100),
-    'f': np.random.choice(['a', 'b', 'c', 'd'], size=100)
-})
+df = pd.DataFrame(
+    {
+        "a": np.random.rand(100),
+        "b": np.random.randint(100),
+        "c": np.random.choice(["a", "b", "c", "d"], size=100),
+    }
+)
+df.index.name = "p"
+df2 = pd.DataFrame(
+    {
+        "d": np.random.rand(100),
+        "e": np.random.randint(100),
+        "f": np.random.choice(["a", "b", "c", "d"], size=100),
+    }
+)
 
 
-@pytest.fixture(scope='module')
+@pytest.fixture(scope="module")
 def temp_db():
-    f = tempfile.mkstemp(suffix='.db')[1]
-    uri = 'sqlite:///' + f
+    f = tempfile.mkstemp(suffix=".db")[1]
+    uri = "sqlite:///" + f
     engine = sa.create_engine(uri)
     con = engine.connect()
     con.execute(
@@ -30,16 +35,18 @@ def temp_db():
         p BIGINT PRIMARY KEY,
         a REAL NOT NULL,
         b BIGINT NOT NULL,
-        c TEXT NOT NULL);""")
+        c TEXT NOT NULL);"""
+    )
     con.execute(
         """CREATE TABLE temp2 (
         d REAL NOT NULL,
         e BIGINT NOT NULL,
-        f TEXT NOT NULL);""")
-    df.to_sql('temp', uri, if_exists='append')
-    df2.to_sql('temp_nopk', uri, if_exists='append', index=False)
+        f TEXT NOT NULL);"""
+    )
+    df.to_sql("temp", uri, if_exists="append")
+    df2.to_sql("temp_nopk", uri, if_exists="append", index=False)
     try:
-        yield 'temp', 'temp_nopk', uri
+        yield "temp", "temp_nopk", uri
     finally:
         if os.path.isfile(f):
             os.remove(f)
